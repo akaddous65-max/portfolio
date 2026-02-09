@@ -1,0 +1,283 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root{
+  --bg:#0b0f19;
+  --card: rgba(255,255,255,.06);
+  --line: rgba(255,255,255,.14);
+
+  --text:#f3f5ff;
+  --muted:#c7cbe2;
+
+  /* girly but elegant */
+  --pink:#ff7bb0;
+  --lilac:#b79cff;
+  --peach:#ffb3a7;
+
+
+
+  --radius:18px;
+  --shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--text);
+  line-height:1.6;
+
+  /* fond pro + touches girly */
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(255,123,176,.20), transparent 60%),
+    radial-gradient(900px 500px at 85% 20%, rgba(183,156,255,.18), transparent 55%),
+    radial-gradient(900px 500px at 60% 90%, rgba(255,179,167,.10), transparent 55%),
+    var(--bg);
+}
+
+a{color:inherit}
+
+.container{max-width:1000px;margin:0 auto;padding:24px}
+
+/* NAV */
+.nav{
+  position:sticky;
+  top:0;
+  background: rgba(11,15,25,.65);
+  border-bottom:1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+.nav-inner{
+  max-width:1000px;margin:0 auto;padding:14px 24px;
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+}
+.brand{font-weight:800;text-decoration:none;letter-spacing:.2px}
+.links a{
+  text-decoration:none;
+  margin-left:10px;
+  color:var(--muted);
+  font-weight:700;
+  padding:8px 10px;
+  border-radius:999px;
+}
+.links a:hover{
+  color:var(--text);
+  background: rgba(255,255,255,.06);
+}
+
+/* HERO */
+.hero{padding:36px 0}
+.badge{
+  display:inline-block;
+  padding:9px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  color:var(--muted);
+  font-weight:800;
+  font-size:13px;
+}
+
+h1{
+  margin:12px 0 10px;
+  font-size:38px;
+  line-height:1.15;
+  letter-spacing:-.6px;
+  /* petit effet “girly pro” sur le titre */
+  background: linear-gradient(90deg, var(--text), rgba(255,123,176,.95), rgba(183,156,255,.95));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.subtitle{color:var(--muted);max-width:65ch}
+
+/* BOUTONS */
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;              /* plus girly */
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  text-decoration:none;
+  font-weight:800;
+  transition: transform .15s ease, background .15s ease;
+}
+
+.btn.primary{
+  border:none;
+  color:#120b16;
+  background: linear-gradient(135deg, var(--pink), var(--lilac));
+  box-shadow: 0 10px 25px rgba(255,123,176,.20);
+}
+
+.btn:hover{transform: translateY(-1px)}
+.btn:active{transform: translateY(0px)}
+
+/* GRILLES */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:800px){
+  .grid{grid-template-columns:1fr}
+  h1{font-size:30px}
+}
+
+/* CARTES */
+.card{
+  border:1px solid var(--line);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding:16px;
+  box-shadow: var(--shadow);
+}
+
+.thumb{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:16px;
+  border:1px solid var(--line);
+  margin-bottom:10px;
+  filter: saturate(1.02) contrast(1.02);
+}
+
+.small{color:var(--muted);font-size:14px}
+
+/* GALERIE (si tu l’utilises) */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:12px;
+}
+.gallery .thumb{height:220px}
+.gallery a{display:block}
+@media (max-width:800px){
+  .gallery{grid-template-columns:1fr}
+}
+
+/* FOOTER */
+.footer{
+  margin:40px 0 10px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+}
+
+.skills-mini{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.skill-item{
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.06);
+}
+
+.icon{
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: linear-gradient(135deg, rgba(255,123,176,.25), rgba(183,156,255,.18));
+  color: var(--text);
+  flex: 0 0 auto;
+}
+
+.skill-item strong{
+  display: block;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.muted-line{
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+}
+/* HERO centré */
+.hero-center{
+  text-align: center;
+  padding: 48px 0 26px;
+}
+
+.hero-center .subtitle{
+  margin: 0 auto;
+}
+
+.cta-center{
+  justify-content: center;
+}
+
+/* Cards des 3 skills */
+.skills-cards{
+  margin: 18px auto 0;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 900px){
+  .skills-cards{ grid-template-columns: 1fr; }
+}
+
+.skill-card{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 14px 30px rgba(0,0,0,.25);
+  text-align: left;
+}
+
+.icon-bubble{
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: #140b18;
+  border: 1px solid rgba(255,255,255,.18);
+  background: linear-gradient(135deg, var(--pink), var(--lilac));
+  box-shadow: 0 12px 22px rgba(255,123,176,.22);
+  flex: 0 0 auto;
+}
+
+.skill-text strong{
+  display:block;
+  font-weight: 900;
+  letter-spacing: .1px;
+}
+
+.skill-text span{
+  display:block;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+/* Un titre plus “premium” en centre */
+.hero-center h1{
+  margin-left:auto;
+  margin-right:auto;
+}
