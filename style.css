@@ -350,3 +350,4 @@ p{ margin: 10px 0; }
   box-shadow: 0 14px 30px rgba(255,123,176,.28);
 }
 
+body { outline: 8px solid hotpink !important; }
